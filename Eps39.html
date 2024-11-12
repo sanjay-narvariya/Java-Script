@@ -1,0 +1,65 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+
+ $(document).ready(function(){
+
+ var redbus=[
+{bid:'MP07CA4451',drivername:'Tony Singh',seater:35,type:'AC',fare:1100,from:'Gwalior',to:'Jaipur',days:'TTS'},
+{bid:'MP07CA6459',drivername:'Pratap Singh',seater:70,type:'NONAC',fare:500,from:'Gwalior',to:'Jaipur',days:'R'},
+{bid:'MP07CB2259',drivername:'Harry Singh',seater:35,type:'AC',fare:1500,from:'Agra',to:'Bhopal',days:'R'},
+{bid:'MH88CA2154',drivername:'Thomas Singh',seater:35,type:'AC',fare:2500,from:'Mumbai',to:'Indore',days:'R'},
+]
+
+function call(data)
+{
+ var htm=`<table cellspacing=0 cellpadding=4 border=1 width='40%'>`
+     htm+=`<caption><h3>Red Bus Details</h3></caption>`
+     htm+=`<tr><th>Id</th><th>Driver</th><th>Seats</th><th>Type</th><th>Fare</th><th>From</th><th>To</th><th>Days</th><th>Show</th></tr>`
+ 
+ data.map((item)=>{
+    htm+=`<tr><td>${item.bid}</td><td>${item.drivername}</td><td>${item.seater}</td><td>${item.type}</td><td>${item.fare}</td><td>${item.from}</td><td>${item.to}</td><td>${item.days}</td><td><input type="button" class="bus" value="show" busdata='${JSON.stringify(item)}' /></td></tr>`
+
+ })
+htm+=`</table>`
+$('#result1').html(htm)
+}
+
+call(redbus)
+
+$('.bus').click(function(){
+       var bus=JSON.parse($(this).attr('busdata'))
+       // alert(bus.drivername)
+       var htm=`<table cellspacing=0 cellpadding=4 border=1 width='40%'>`
+     htm+=`<caption><h3>Red Bus Details</h3></caption>`
+    htm+=`<tr><th>Id</th><th>Driver</th><th>Seats</th><th>Type</th><th>Fare</th><th>From</th><th>To</th><th>Days</th></tr>`
+    htm+=`<tr><td>${bus.bid}</td><td>${bus.drivername}</td><td>${bus.seater}</td><td>${bus.type}</td><td>${bus.fare}</td><td>${bus.from}</td><td>${bus.to}</td><td>${bus.days}</td></tr>`
+    htm+=`</table>`
+    $('#result2').html(htm)
+
+})
+
+
+
+$('.employee').click(function(){
+
+              //  alert($(this).attr('employeename'))
+              var htm=`<table width='30%' border=1><tr><th>${$(this).attr('employeeid')}</th><th>${$(this).attr('employeename')}</th><th>${$(this).attr('salary')}</th></tr></table>`
+              $('#result').html(htm)
+
+             })
+
+
+
+
+    })
+
+</script>
+<html>
+    <input type="button" value="Employee One" class="employee" employeeid="100" employeename="Harry" salary="5000" /><br><br>
+    <input type="button" value="Employee Two" class="employee" employeeid="200" employeename="Alias" salary="7000" /><br><br>
+    <input type="button" value="Employee Three" class="employee" employeeid="300" employeename="Peter" salary="8000" /><br><br>
+    <div id="result"></div><br><br>
+    <div id="result1"></div><br><br>
+    <div id="result2"></div><br><br>
+
+</html>

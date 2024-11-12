@@ -1,0 +1,28 @@
+<script>
+    function show()
+    {
+      var x=parseInt(txt.value)
+      var da=x*55/100
+      var hra=x*20/100
+      var pf=x*12/100
+      var ns=x+da+hra-pf
+      var htm=`<center>`
+          htm+=`<table border=1 cellspacing=10 width=40%>`
+          htm+=`<tr><th colspan=2>Net Salary</th></tr>`
+          htm+=`<tr><td>DA: </td><td>${da} (55%)</td></tr>`
+          htm+=`<tr><td>HRA: </td><td>${hra} (20%)</td></tr>`
+          htm+=`<tr><td>PF: </td><td>${pf} (12%)</td></tr>`
+          htm+=`<tr><td>NET SELARY: </td><td>${ns} </td></tr>`
+          htm+=`</table>`
+          htm+=`</center>`
+        
+
+       msg.innerHTML=htm   
+    }
+</script>
+<html>
+  <input type="text" id="txt" placeholder="Employee salary..."/><br><br>
+  <input type="button" Value="Get net salary" onclick="show()"/><br><br>
+  <div id="msg"></div>
+
+</html>

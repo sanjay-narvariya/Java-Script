@@ -1,0 +1,70 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+
+ $(document).ready(function(){
+
+     $('#states').change(function(){
+      var c={'Rajasthan':['Jaipur','Bharatpur','Dosa','Alwar'],'Madhya Pradesh':['Gwalior','Ujjain','Morena','Datia'],'Utter Pradesh':['Agra','Mathura','Noida','Aligarh']}
+            // alert($('#states').val())
+            // alert($( "#states option:selected").text()) 
+           // alert($("#states :selected").text()) 
+          //alert($( "#states option:selected").index())
+          //alert($("#states :selected").index())  
+          // var data=$("#states option:selected").val()
+          var data=c[$('#states :selected').text()]
+          alert(data)
+           call(data)
+               })
+
+
+               function call(data)
+               {
+                      $('#city').empty()
+                      $('#city').append($('<option>').text('Select-City'))
+                      data.map((item)=>{
+                        $('#city').append($('<option>').text(item))
+                      })
+               }
+
+    /*  function call(data)
+      {
+        alert(data)
+          $('#city').empty()
+          //this is not work===>$('#city').remove()
+
+         $('#city').append(new Option('Select-City'))
+
+        var c={'Rajasthan':['Jaipur','Bharatpur','Dosa','Alwar'],'Madhya Pradesh':['Gwalior','Ujjain','Morena','Datia'],'Utter Pradesh':['Agra','Mathura','Noida','Aligarh']}
+         
+        var cities=c[data]
+     alert(cities)
+     
+       cities.map((item)=>{
+            optionText=item
+            optionValue=item
+     $('#city').append(new Option(optionText, optionValue))
+  
+       })
+      }
+
+      */
+
+
+}) 
+
+
+
+</script>
+<html>
+    <h3><u>States</u></h3>
+    <select id="states">
+           <option selected>Select-State</option>
+           <option >Rajasthan</option>
+           <option >Madhya Pradesh</option>
+           <option>Utter Pradesh</option>
+    </select><br><br>
+    <h3><u>Cities</u></h3>
+    <select id="city">
+          <option>Select-City</option>
+    </select>
+</html>

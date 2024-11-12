@@ -1,0 +1,20 @@
+<script>
+    function call()
+    {
+        if(gm.checked)
+        {
+            result.color=gm.value
+        }
+        else
+        {
+            result.color=gf.value
+        }
+    }
+</script>
+<html>
+     
+     <input type="radio" value="red" name="gender"  id="gm"/>Red
+     <input type="radio" value="blue" name="gender"  id="gf"/>blue<br>
+     <input type="button" value="click here" onclick="call()"/>
+     <font id="result" ><h1>Hello Student</h1></font>
+</html>

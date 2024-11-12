@@ -1,0 +1,49 @@
+<script>
+  
+var product=[
+         {pid:'SHNO100',shopername:'ram singh',quantity:35,producttype:'pepsi',price:90, opendays:'tts'},
+         {pid:'SHNO101',shopername:'pratap singh',quantity:25,producttype:'fanta',price:20, opendays:'ms'},
+         {pid:'SHNO102',shopername:'shyam singh',quantity:40,producttype:'frooti',price:45, opendays:'fst'},
+         {pid:'SHNO103',shopername:'khir singh',quantity:50,producttype:'maaza',price:130, opendays:'ssm'},         
+]
+
+function call()
+    {
+        result1.innerHTML=minr.value
+        result2.innerHTML=maxp.value
+    
+
+       var data=product.filter((item)=>{
+              return (((item.price)>=(minr.value)) && ((item.price)<=(maxp.value)))
+                  
+         })
+
+     
+
+    var htm=`<table cellspacing=0 border=1 width='50%'>`
+    htm+=`<caption><h3>Product Details</h3></caption>`
+    htm+=`<tr><th>product-id</th><th>Shoper-Name</th><th>Quantity</th><th>Product Name</th><th>product image</th><th>Price</th><th>Opening Days</th></tr>`
+
+    data.map((item)=>{
+               htm+=`<tr><td>${item.pid}</td><td>${item.shopername}</td><td>${item.quantity}</td><td>${item.producttype}</td><td><img src="${item.producttype}.png" width=120 height=60 /></td><td>${item.price}</td><td>${item.opendays}</td></tr>`
+    })
+
+    htm+=`</table>`
+
+    see.innerHTML=htm
+  }
+
+</script>
+<html>
+    <body>
+      <center>
+        <h3><u>Minimum Range</u></h3>
+       <input type="range" value="0" step=5 min=0 max=50 id="minr" onchange="call()"/>
+       <div id="result1"></div><br><br>
+       <h3><u>Maximum Range</u></h3>
+       <input type="range" value="51" step=5 min="51" max="132" id="maxp" onchange="call()"/>
+       <div id="result2"></div><br>
+       <div id="see"></div>
+       </center>
+    </body>
+</html>

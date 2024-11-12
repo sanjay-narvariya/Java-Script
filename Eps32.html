@@ -1,0 +1,38 @@
+<script>
+     function call()
+    {
+               var student={
+                           'CS100':{firstname:'Ram',lastname:'singh',physics:80,chemistry:85,math:100},
+                           'CS200':{firstname:'Peter',lastname:'kumar',physics:70,chemistry:75,math:90},
+                           'CS300':{firstname:'Ankit',lastname:'sharma',physics:60,chemistry:45,math:50},
+                           }
+
+                console.log(student)
+                console.log(student.CS200)
+                console.log(student['CS200'])
+                console.log(student['CS200']['chemistry'])
+                console.log(student.CS300.chemistry)
+                //add new students
+                student['CS400']={firstname:'Thomas',lastname:'cook',physics:40,chemistry:50,math:60}
+                console.log('ALL',student)
+                 //modify students record
+                 student.CS100.lastname='Tomar'
+                 console.log('ALL',student)
+                 //Add hindi marks
+                 student.CS200.hindi=100
+                 console.log(student)
+                 //Delete the record
+                 var temp=student['CS200']
+                 delete student.CS200
+                 console.log(student)
+                 console.log(temp)
+
+                 //update marks
+                 student.CS100.physics=student.CS100.physics+100
+                 console.log(student.CS100.physics)
+
+    }
+</script>
+<html>
+   <input type="button" value="click here" onclick="call()"/>
+</html>

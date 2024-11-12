@@ -1,0 +1,36 @@
+<script>
+     var arr=['ram','shyam','geeta']
+    function call()
+    {
+        arr.push(msg.value)
+        console.log(arr)
+    }
+
+    function call1()
+    {
+        clearOption()
+        arr.map((item,i)=>{
+       var opt=document.createElement('option')
+       opt.text=arr[i]
+       result.add(opt)
+
+        })
+    }
+
+    function clearOption()
+    {
+        for(i=result.length-1;i>0;i--)
+        {
+            result.remove(i)
+        }
+    }
+    
+</script>
+<html>
+    <input type="text" id="msg" placeholder="put the value..."/><br><br>
+    <input type="button" value="Add" onclick="call()"/><br><br>
+    <input type="button" value="Show" onclick="call1()"/><br><br>
+     <select id="result" size="10" multiple>
+        <option>-Show Result-</option>
+     </select>
+</html>

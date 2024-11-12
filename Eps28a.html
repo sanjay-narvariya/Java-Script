@@ -1,0 +1,37 @@
+<script>
+     var t=15
+     var k
+    function call()
+    {
+       var x=`Exam Running`
+       var htm=`<table border=1 cellspacing=1 width=40%>`
+        htm+=`<tr><th>${x}</th><th>${t}</th></tr>`
+        htm+=`</table>`
+
+        msg1.innerHTML=htm
+        t=t-1
+
+        if(t===0)
+        {
+            x=`Exam Over`
+            var htm=`<table border=1 cellspacing=1 width=40%>`
+                htm+=`<tr><th>${x}</th><th>${t}</th></tr>`
+                htm+=`</table>`
+
+        msg1.innerHTML=htm
+            clearInterval(k)       
+        }
+       
+
+    }    
+
+    function start()
+    {  
+        msg1.innerHTML=`Exam Start`
+        k=setInterval(call,1000)
+    }
+</script>
+<html>
+    <input type="button" value="Start" onclick="start()"/><br><br>
+    <span id="msg1"></span>
+</html>

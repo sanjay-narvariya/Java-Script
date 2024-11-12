@@ -1,0 +1,29 @@
+<script>
+    function call()
+    {
+        var sum=0
+        if(p1.checked)
+        {
+             sum =sum+15000
+        }
+         if(p2.checked)
+        {
+            sum=sum+45000
+        }
+        if(p3.checked)
+        {
+            sum=sum+50000
+        }
+
+        result.innerHTML=sum
+    }
+</script>
+<html>
+    <br><br>
+    <center>
+    <input onchange="call()" type="checkbox" id="p1" value="Sony Hifi"/>Sony Hifi<br><br>
+    <input onchange="call()" type="checkbox" id="p2" value="Sony Handicam"/>Sony Handicam<br><br>
+    <input onchange="call()" type="checkbox" id="p3" value="Sony TV"/>Sony TV<br><br>
+    <span>Your Bill:</span><span id="result"></span>
+    </center>
+</html>

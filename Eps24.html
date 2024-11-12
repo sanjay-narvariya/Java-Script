@@ -1,0 +1,69 @@
+<script>
+    function call()
+    {
+
+
+        var k=[80,67,34,89,42,900,21]
+        var x=k.map((item,i)=>item*1000)
+        console.log(x)
+
+        
+     /*   var k=['Java','C','C++','Python','Ruby']
+
+        var x=k.map((item,i)=>`${item} Programming Language`)
+        console.log(x)
+*/
+       /* function process(item,i)
+        {
+            return `${item} Language`
+        }
+        var x=k.map(process);
+        console.log(x)*/
+       /* var x=k.map(function(item,i){
+            if(i%2==0)
+            {
+                return `<li><font color='red'>${item}</font></li>`
+            }
+            else{
+            return `<li><font color='green'>${item}</font></li>`
+            }      
+        })
+          
+        var htm=`<ul>`
+
+           /* for(i=0;i<x.length;i++)
+            {
+                htm+=x[i]
+                //console.log(x[i])
+            }*/
+
+          /*  htm+=x
+            htm+=`</ul>`
+
+           result.innerHTML=htm*/
+
+       /* var k=[80,67,34,89,42,900,21]
+        var x=k.map(function(item,i){
+            if(item%2==0)
+            {
+            var j=item+1000
+            return j
+            }
+            else
+            {
+                return item
+            }
+        })
+        console.log(x)
+        var k=['Java','C','C++','Python','Ruby']
+        var x=k.map(function(item,i){
+            console.log(item)
+            return `${item} Language`
+        })
+        console.log(x)*/
+    }
+</script>
+<html>
+    <input type="button" value="click here" onclick="call()"/>
+    <br><div id="result">Place Here......</div>
+</html>

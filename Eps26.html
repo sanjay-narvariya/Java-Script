@@ -1,0 +1,63 @@
+<script>
+    function call()
+    {
+
+
+
+       // var x=[1,2,3,4,5,6,7,8,9,10]
+       // var y=x.find(item=>item<10)
+        //console.log(y)
+        x=['Raju','Meen','Meena','Pulkit']
+       // var y=x.findIndex(item=>item=='Meena')
+       // console.log(y)
+        var y=x.indexOf('Meen')
+        console.log(y)
+
+
+        //var x=[['Pepsi',30,25],['Fanta',70,30],['Real Juice',130,70],['Red Bull',340,100]]
+       /* var x=[56,23,14,89,12,4]
+       var y=x.every(item=>item>13)
+       console.log(y)
+       var y=x.some(item=>item<5)
+       console.log(y)
+       var y=x.includes(3)
+       console.log(y)
+       var x1=['m','a','n','d','e','e','p']
+       var y=x1.join('*')
+       console.log(y)
+
+        var y=[21,45,36]
+        var z=x.concat(y)
+        console.log(z)
+          var y=x.forEach((item,i)=>{
+            console.log(item)
+          })
+
+       // var y=x.sort((a,b)=>a[0]>b[0]?1:-1)
+       var y=x.sort((a,b)=>{
+
+        if(a[0]>b[0])
+           return 1
+        else
+           return -1
+       })
+        console.log(y)
+       //var x=[['Pepsi',30,25],['Fanta',70,30],['Real Juice',130,70],['Red Bull',340,100]]
+       // var x=[4,5,6,7,10]
+        var ta=x.reduce((a,b)=>{
+            return a+b[1]
+        },0)
+        console.log('Total Amount:',ta)
+
+        var op=x.reduce((a,b)=>{
+            return a+b[2]
+        },0)
+        console.log('Offer Price:',op)
+
+        var save=ta-op
+        console.log('You Save:',save)*/
+    }
+</script>
+<html>
+    <input type="button" value="click here" onclick="call()"/>
+</html>

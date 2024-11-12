@@ -1,0 +1,33 @@
+<script>
+    function call()
+    {
+        var month=['jan','feb','mar','apr','may','jun','july','aug','sept','oct','nov','dec']
+        var day=['sun','mon','tues','wed','thur','fri','sat']
+        var d=new Date()
+        //var cd=`${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`
+        var cd=`${day[d.getDay()]}-${d.getDate()}-${month[d.getMonth()]}-${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}:${d.getMilliseconds()}`
+
+        result.innerHTML=cd
+    }    
+
+    var k
+    function start()
+    {
+        k=setInterval(call,200)
+    }
+
+    function stop()
+    {
+        clearInterval(k)
+    }
+</script>
+<html>
+    <center>
+    <br><br>
+    <h1>Here is Timing Watch. we can start a work with set time.</h1>
+    <input type="button" value="Start" onclick="start()"/>&nbsp;&nbsp;
+    <input type="button" value="Stop" onclick="stop()"/>
+    <br><br>
+    <div id="result">Here....</div> 
+    </center>
+</html>

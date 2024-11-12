@@ -1,0 +1,64 @@
+<script>
+    function call()
+    {
+       var x=txt.value
+       var y=txt1.value
+       var a=parseFloat(txt2.value)
+       var b=parseFloat(txt3.value)
+       var c=parseFloat(txt4.value)
+       var t=a+b+c
+            t=t.toFixed(2)
+       var per=(t/300)*100
+             per=per.toFixed(2)
+        var z=''
+       if(per>=0 && per<=34)
+       {
+             z='D'
+       }
+       else if(per>=35 && per<=47)
+       {
+             z='C'
+       }
+       else if(per>=48 && per<=69)
+       {
+             z='B'
+       }
+       else if(per>=60 && per<=100)
+       {
+             z='A'
+       }
+
+       var htm=`<center>`
+            htm+=`<table border=2 cellspacing=10 width=45% >`
+            htm+=`<caption><h1>Student Result</h1></caption>`
+            htm+=`<tr><td>Name: </td><td>${x}</td></tr>`
+            htm+=`<tr><td>Roll Number: </td><td>${y}</td></tr>`
+            htm+=`<tr><td>Physics Marks: </td><td>${a}</td></tr>`
+            htm+=`<tr><td>Chemistry Marks: </td><td>${b}</td></tr>`
+            htm+=`<tr><td>Math Marks: </td><td>${c}</td></tr>`
+            htm+=`<tr><td>Total: </td><td>${t}</td></tr>`
+            htm+=`<tr><td>Percentage: </td><td>${per}</td></tr>`
+            htm+=`<tr><td>Grade: </td><td>${z}</td></tr>`
+            htm+=`</table>`
+            htm+=`</center>`
+
+           msg.innerHTML=htm
+
+
+    }
+
+</script>
+<html>
+    <b><font size="5">Student Marks</font></b><br>
+    <hr color="red" width="40%" align="left" />
+
+    <input type="text" id="txt" placeholder="Enter Name"/><br><br>
+    <input type="text" id="txt1" placeholder="Enter Roll Number"/><br><br>
+    <input type="text" id="txt2" placeholder="Enter physics marks"/><br><br>
+    <input type="text" id="txt3" placeholder="Enter chemistry marks"/><br><br>
+    <input type="text" id="txt4" placeholder="Enter math marks"/><br><br>
+
+    <input type="button" value="Get Result" onclick="call()"/><br><br>
+    <div id="msg">See Here.......</div>
+
+</html>

@@ -1,0 +1,47 @@
+<script>
+       function call()
+       {
+          if(rg.checked)
+          {
+               result.color=rg.value
+          }
+          else if(bg.checked)
+          {
+            result.color=bg.value
+          }
+          else if(gg.checked)
+          {
+            result.color=gg.value
+          }
+         /* var gender=''
+          if(mg.checked)
+          {
+            gender=mg.value
+            result.innerHTML=mg.value
+          }
+          else
+          {
+            gender=fg.value
+            result.innerHTML=fg.value
+          }
+     
+          var sn=''
+          if(gender=='Male')
+          {
+              sn='Mr.'
+              msg.innerHTML=sn
+          }
+          else if(gender=='Female')
+          {
+            sn='Mis.'
+            msg.innerHTML=sn
+          }*/
+       }
+</script>
+<html>
+    <input onchange="call()" type="radio" id="rg" name="gender" value="Red">Red color
+    <input onchange="call()" type="radio" id="bg" name="gender" value="Blue">Blue color
+    <input onchange="call()" type="radio" id="gg" name="gender" value="Green">green color
+    <br><br><font size=10 id="result">HELLO STUDENTS</font>
+   
+</html>

@@ -1,0 +1,70 @@
+<script>
+    function call1()
+    {
+          var opt=document.createElement('option')
+          opt.text=msg1.value
+          msg2.add(opt)
+          msg1.remove(msg1.selectedIndex)
+    }
+    function call2()
+    {
+          var opt=document.createElement('option')
+          opt.text=msg2.value
+          msg1.add(opt)
+          msg2.remove(msg2.selectedIndex)
+    }
+
+
+    function call3()
+    {    
+        for(i=1;i<msg1.length;i++)
+        {
+          var opt=document.createElement('option')
+          opt.text=msg1.options[i].value
+          
+          msg2.add(opt)
+        }
+
+        for(i=msg1.options.length-1;i>0;i--)
+        {
+            msg1.remove(i)
+        }
+    }
+
+    function call4()
+    {    
+        for(i=1;i<msg2.length;i++)
+        {
+          var opt=document.createElement('option')
+          opt.text=msg2.options[i].value
+          
+          msg1.add(opt)
+        }
+
+        for(i=msg2.options.length-1;i>0;i--)
+        {
+            msg2.remove(i)
+        }
+    }
+
+</script>
+<html>
+    <center><br><br>
+    <select id="msg1" size="10" multiple>
+        <option>Select One</option>
+        <option>Fanta</option>
+        <option>Coca cola</option>
+        <option>Pepsi</option>
+        <option>Frooti</option>
+    </select>&nbsp;&nbsp;
+
+    <select id="msg2" size="10" multiple>
+        <option>Select This</option>
+    </select><br><br>
+    <input type="button" value=">" onclick="call1()"/>
+    <input type="button" value="<" onclick="call2()"/>
+    <input type="button" value=">>" onclick="call3()"/>
+    <input type="button" value="<<" onclick="call4()"/>
+    </center>
+
+</html>

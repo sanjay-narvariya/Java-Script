@@ -1,0 +1,60 @@
+<script>
+        function call()
+        {
+            pic.width=20
+            pic.height=20
+            var x=txt.value
+            rep.innerHTML=x
+            var c
+             for(i=0;x[i];i++)
+               {
+                    if((x[i]>='A' && x[i]<='Z') || (x[i]>='a' && x[i]<='z') || x[i]==' ' )
+                    {
+                       
+                        c=0
+                    }
+                    else
+                    {
+                     
+                        c=1
+                        break
+                    }
+                }
+
+                if(c==1)
+                {
+                    pic.src=`cross.png`
+                }
+                else
+                {
+                    pic.src=`right.png`
+                }
+           /* var y=txt.value.length-1
+            var x=t.charCodeAt(y)
+       
+            if((x>=65 && x<=90) || (x>=97 && x<=122) || x==32 )
+           {
+                
+                        pic.src=`right.png`
+             
+            }
+            else 
+            {
+             pic.src=`cross.png`
+                
+           }
+
+           */
+
+
+
+
+
+        }
+        
+</script>
+<html>
+    <input type="password" id="txt" placeholder="password...." onkeyup="call()"/>
+    <img id="pic"/>
+    <div id="rep"></div>
+</html>

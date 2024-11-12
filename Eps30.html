@@ -1,0 +1,55 @@
+<script>
+
+   /* function call() 
+    {
+        var y = ['Yodha', 'Shaitan', 'Animal']
+
+        var htm = `<table cellspacing='5' cellpadding='5' border='1'>`
+        htm += `<tr>`
+        y.map((item) => {
+
+            htm += `<th><img src='${item}.png'><br><input type='radio' value='${item}' id='${item}' name='poster'>${item}</th>`
+        })
+        htm += `</tr>`
+        htm += `</table>`
+        console.log(htm)
+        result.innerHTML  = htm
+
+    }*/
+    function call()
+    {
+       // result.innerHTML=txt.value
+       pic.width=20
+       pic.height=20
+       var t=pwd.value.length
+       console.log(t)
+       if(t>=1 && t<=5)
+       {
+        //result.innerHTML=`<font color=green>password matched</font>`
+        pic.src=`10.png`
+
+       }
+       else if(t>=6 && t<=8)
+       {
+       //result.innerHTML=`<font color=red>password not matched</font>`
+       pic.src=`30.png`
+       }
+       else if(t>=9 && t<=11)
+       {
+        pic.src=`20.png`
+       }
+       else if(t>11)
+       {
+        pic.src=`cross.png`
+       }
+
+
+    }
+
+</script>
+<html>
+<input type="password" id="pwd" placeholder="password" onkeyup="call()"/>
+<img id="pic"/>
+<div id="result"></div>
+
+</html>

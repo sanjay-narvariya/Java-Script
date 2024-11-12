@@ -1,0 +1,35 @@
+<script>
+    function call1()
+    {
+        result1.innerHTML="Typing Name....."
+    }
+    function call2()
+    {
+        result2.innerHTML="Typing Age....."
+    }
+
+    function clear1()
+    {
+         result1.innerHTML=""
+    }
+
+     function clear2()
+     {
+               
+         result2.innerHTML=""
+       }
+     function allClear()
+     {
+        txt1.value=" "
+        txt2.value=" "     
+     }
+      
+</script>
+<html>
+  <input type="text" id="txt1" onfocus="call1()" onblur="clear1()" placeholder="Your Name.."/>
+  <span id="result1"></span><br><br><br>
+  <input type="text" id="txt2" onfocus="call2()" onblur="clear2()" placeholder="Your Age.."/>
+  <span id="result2"></span><br><br>
+  <input type="button" value="clear all" onclick="allClear()"/>
+
+</html>

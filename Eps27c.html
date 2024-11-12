@@ -1,0 +1,26 @@
+<script>
+   function call()
+   {
+    var x="this is [test] program we are [learning] java [script] the man who [can] specify the program [when] go to [the] market"
+    var j=0
+    var p=0
+    while(true)
+    {
+
+    j=x.indexOf("[",j)
+    p=x.indexOf("]",p)
+    if(j==-1)
+    { break;
+     }
+       var m=x.slice(j+1,p)
+        console.log(m)
+        j++
+        p++
+    }
+
+   }
+</script>
+<html>
+    <input type="button" value="click here" onclick="call()"/>
+    <div id="msg"></div>
+</html>

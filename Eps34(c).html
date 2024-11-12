@@ -1,0 +1,34 @@
+<script>
+  function call()
+  {
+  var p=ticket.value*100
+  alert(p)
+  result.innerHTML=p
+  }
+</script>
+<html>
+    <body>
+     <center>
+    <table border="0" cellspacing="0" cellpadding="10" width="40%">
+     <caption><h2>Booking Details</h2></caption>
+     <tr><td>Movie:</td><td>
+      <select id="movie" name="movie">
+        <option selected value="picture">Movie 1</option>
+        <option>Movie 2</option>
+        <option>Movie 3</option>
+      </select></td></tr>
+      <tr><td>Theaters:</td><td>
+               <select id="movie" name="movie">
+                 <option selected value="picture">Theater 1</option>
+                 <option>Theater 2</option>
+                 <option>Theater 3</option>
+               </select></td></tr>
+        <tr><td>Date: </td><td><input type="date" id="date" name="date"></td></tr>
+        <tr><td>Email: </td><td><input type="email" id="mail" name="mail"></td></tr>
+        <tr><td># Tickets: </td><td><input type="text" id="ticket" name="ticket"></td></tr>
+        <tr><td>Total Price: </td><td><span id="result">see here</span></td></tr>
+        <tr><td colspan="2"><center><input type="button" value="click here" id="bn" onclick="call()" ></center></td></tr>
+    </table>
+    </center>
+    </body>
+</html>

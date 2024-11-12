@@ -1,0 +1,35 @@
+<script>
+    function call()
+    {
+        pic.width=30
+        var myname=txt.value
+        var error=true
+       if(myname.length==10)
+       {
+        error=false
+        for(i=0;i<myname.length;i++)
+        {
+            var code=myname.charCodeAt(i)
+            if( !(code>=48 && code<=57) )
+            {
+                error=true
+                break;
+            }
+        }
+       }
+
+        if(error)
+        {
+           pic.src=`cross.png`
+        }
+        else
+        {
+            pic.src=`right.png`
+        }
+    }
+
+</script>
+<html>
+    <input type="text" id="txt" placeholder="Your phone no...." onkeyup="call()"/>
+    <img id="pic"/>
+</html>

@@ -1,0 +1,46 @@
+<script>
+  function call()
+  {
+    var x=[4,4,5,7,7,7,3,4,2,2,13]
+    x=x.sort((a,b)=>a>b?1:-1)
+    console.log(x)
+    var i=0
+    var t=x.map((item)=>{
+        if(i<x.length)
+        {  
+            var p=x[i]
+            var count=0
+       
+         x.map((part,j)=>{
+
+            if(x[j]==p)
+            {
+              count++
+              i++
+            }
+             
+         })
+
+           if(count>1)
+            {
+                return p     
+            }
+            //alert(count)
+          /* if(count==1)
+            {
+                return p
+            }*/
+            
+        }
+        
+    })
+   
+msg.innerHTML=`Duplicate Elements: ${t}`
+
+
+  }
+</script>
+<html>
+    <input type="button" value="click here" onclick="call()"/><br><br>
+    <div id="msg"></div>
+</html>

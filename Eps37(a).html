@@ -1,0 +1,26 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+
+ $(document).ready(function(){
+     $('#subjecttwo').change(function(){
+     
+              // alert($('#subjectone').prop('checked'))
+               
+              //this no working====> alert($('#subjectone').attr('checked'))
+
+             // $('#result').html($('#subjectone').val())
+             $('#result').html($('#subjecttwo').val())
+     })
+
+ })
+</script>
+
+
+ <html>
+     <input type="radio" id="subjectone" name="subject" value="chemistry">chemistry
+     <input type="radio" id="subjecttwo" name="subject" value="math">Math
+     <input type="radio" id="subjectthree" name="subject" value="physics">Physics
+    <br><br>
+    <div id="result"></div>
+
+ </html>

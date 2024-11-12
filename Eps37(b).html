@@ -1,0 +1,52 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+
+        $('#product').change(function(){
+        var products={'Electronics':[{productname:'LG WM',price:'12000'},{productname:'LG LED',price:'35000'},{productname:'LG REF',price:'30000'},],
+                       'Electricals':[{productname:'KKR WIRE',price:'1200'},{productname:'KKR SWITCH',price:'350'},{productname:'KKR SOCKET',price:'300'},],
+                       'Sofa':[{productname:'SOFA COVER',price:'500'},{productname:'SOFA TABLE',price:'2500'},{productname:'SOFA PILLOW',price:'200'},]
+                     }
+
+
+     var data=products[$('#product :selected').text()]
+           call(data)
+        })
+
+
+
+        function call(data)
+               {
+                      $('#productlist').empty()
+                      $('#productlist').append($('<option>').text('Select Product List'))
+                      data.map((item)=>{
+                        $('#productlist').append($('<option>').text(item.productname).val(item.price))
+                      })
+
+               }
+
+         $('#productlist').change(function(){
+
+               $('#result').html($('#productlist :selected').val())
+
+         })
+
+
+    })
+</script>
+
+<html>
+    <h3><u>Products</u></h3>
+    <select id="product">
+           <option selected>Select Product</option>
+           <option >Electronics</option>
+           <option >Electricals</option>
+           <option>Sofa</option>
+    </select><br><br>
+    <h3><u>Product List</u></h3>
+    <select id="productlist">
+          <option>Select Product List</option>
+    </select><br><br><br>
+    <div id="result"></div>
+</html>

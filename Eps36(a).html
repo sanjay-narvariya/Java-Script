@@ -1,0 +1,16 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+
+   $(document).ready(function(){
+               $('#btn').click(function(){
+                              var c=parseInt($('#txt1').val()) + parseInt($('#txt2').val())
+                              $('#result').html(c)
+               })
+   })
+</script>
+<html>
+  <input type="text" id="txt1" placeholder="First Number...."><br><br>
+  <input type="text" id="txt2" placeholder="Seconder Number...."><br><br>
+  Result: <div id="result"></div><br><br>
+  <input type="button" id="btn" value="click Here"/>
+</html>

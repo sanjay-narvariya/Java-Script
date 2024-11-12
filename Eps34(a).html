@@ -1,0 +1,23 @@
+<script>
+     function setSize()
+     {
+       picture.width=250
+       picture.height=300
+     }
+
+
+     function changeSize()
+     {
+       picture.width=ss.value
+       picture.height=ss.value
+     }
+
+</script>
+<html>
+       <body onload="setSize()">
+         <center>
+               <input type="range" id="ss" value="300" min="300" max="1000" step="10" onchange="changeSize()"/><br>
+               <img id="picture" src="goofy1.png" onmouseover="changeSize()" onmouseleave="setSize()" />
+         </center>
+       </body>        
+</html>

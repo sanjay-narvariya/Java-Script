@@ -1,0 +1,34 @@
+<script>
+      function call()
+      {
+        var x="Ram is the man when the field the market the coincide"
+        console.log(x)
+          var p=msg1.value
+          var ch=msg2.value
+          var i=1
+         var j=x.length-1
+         var z=x
+
+          while(i<=p)
+          {
+            j=z.lastIndexOf(ch,j) 
+            if(j==-1)
+            {break
+            } 
+            var t=z.slice(0,j)
+            var k=z.slice(j+ch.length+1)
+             z=t.concat(k)
+               console.log(z)
+
+            j--
+            i++
+          }
+         // console.log(z)
+          
+      }
+</script>
+<html>
+    <input type="text" id="msg1" placeholder="Enter Numbers...."/>&nbsp;&nbsp;
+    <input type="text" id="msg2" placeholder="Enter Characters...."/><br><br>
+    <input type="button" value="Submit" onclick="call()"/>
+</html>

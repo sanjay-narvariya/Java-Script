@@ -1,0 +1,33 @@
+<script>
+      var count=1
+     function set()
+     {
+       ss.innerHTML=count
+     }
+
+     function increament()
+     {
+        if(count<10)
+         {
+         count++
+         ss.innerHTML=count
+         }
+     }
+      
+     function decreament()
+     {
+        if(count>0)
+        {
+        count--
+        ss.innerHTML=count
+        }
+     }
+
+</script>
+<html>
+     <body onload="set()">
+      <input type="button" value="-" id="minus" onclick="decreament()"/>
+      <span id="ss"></span>
+       <input type="button" value="+" id="plus" onclick="increament()"/>
+     </body>
+</html>

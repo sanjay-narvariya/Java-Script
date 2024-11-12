@@ -1,0 +1,74 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    var Students=[
+{sid:'MP07CA4451',studentname:'Tony Singh',physics:95,math:90,chemistry:80},
+{sid:'MP07CA6459',studentname:'Pratap Singh',physics:95,math:95,chemistry:86},
+{sid:'MP07CB2259',studentname:'Harry Singh',physics:62,math:90,chemistry:80},
+{sid:'MH88CA2154',studentname:'Thomas Singh',physics:48,math:86,chemistry:60},
+] 
+ 
+function total(item){
+         var t=parseInt(item.physics+item.math+item.chemistry)
+         return t;
+}
+function Tell(item){
+         var t=parseInt(item.physics+item.math+item.chemistry)
+         var p=t/3
+         return p;
+}
+
+function Show(item){
+         var t=parseInt(item.physics+item.math+item.chemistry)
+         var p=t/3
+         var d=""
+         if(p>=40 && p<60)
+         {
+            d='C'
+         }
+         else if(p>=60 && p<80)
+         {
+           d='B'
+         }
+         else if(p>=80 && p<=100)
+         {
+           d='A'
+         }
+         return d;
+}
+
+
+function call(data)
+{
+     var htm=`<table cellspacing=0 cellpadding=4 border=1 width='40%'>`
+     htm+=`<caption><h3>Students Details</h3></caption>`
+     htm+=`<tr><th>St.Id</th><th>St.Name</th><th>Phy.Mark</th><th>Ma.Mark</th><th>Chem.Mark</th><th>Total</th><th>Percentage</th><th>Division</th><th>Show</th></tr>`  
+     data.map((item)=>{
+        
+           htm+=`<tr><td>${item.sid}</td><td>${item.studentname}</td><td>${item.physics}</td><td>${item.math}</td><td>${item.chemistry}</td><td>${total(item)}</td><td>${Tell(item).toFixed(2)}</td><td>${Show(item)}</td><td><input type="button" value="show" class="student" stdata='${JSON.stringify(item)}' /></td></tr>`
+     })
+     htm+=`</table>`
+     $('#result').html(htm)
+}
+
+call(Students);
+
+$('.student').click(function(){
+    var student=JSON.parse($(this).attr('stdata'))
+
+    var htm=`<table cellspacing=0 cellpadding=4 border=1 width='40%'>`
+     htm+=`<caption><h3>Students Details</h3></caption>`
+     htm+=`<tr><th>St.Id</th><th>St.Name</th><th>Phy.Mark</th><th>Ma.Mark</th><th>Chem.Mark</th><th>Total</th><th>Percentage</th><th>Division</th></tr>` 
+      htm+=`<tr><td>${student.sid}</td><td>${student.studentname}</td><td>${student.physics}</td><td>${student.math}</td><td>${student.chemistry}</td><td>${total(student)}</td><td>${Tell(student).toFixed(2)}</td><td>${Show(student)}</td></tr>`
+      htm+=`</table>`
+     $('#result1').html(htm)
+})
+
+})
+</script>
+<html>
+  <center>
+<div id="result"></div><br><br>
+<div id="result1"></div>
+</center>
+</html>

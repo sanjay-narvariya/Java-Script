@@ -1,0 +1,57 @@
+<script>
+   function call()
+   {
+
+var x="sandEEp kumaR ShARma"
+var k=''
+for(i=0;i<x.length;i++)
+{
+  if(i==0)
+  {
+    k=k+x[0].toUpperCase()
+    k=k+x[1].toLowerCase()
+  }
+  else if(x[i]!=' ' && i!=0)
+  { 
+    k=k+x.charAt(i+1).toLowerCase()
+  }
+  else if(x[i]==' ')
+  {
+    k=k+' '+x.charAt(i+1).toUpperCase()
+  }
+}
+console.log(k)
+
+   // var x="Java Script"
+   // var i=x.replace(' ','')
+
+    /*var x="   SANDEEP   "
+    var i=x.trim()*/
+    //var i=x.toLowerCase()
+   // var i=x.search('deepak')
+   // console.log(i)
+    /*var t=x.replaceAll('das','pratap')
+    t=t.replace('pratap','das')
+    console.log(t)*/
+   /* var t="hello ".repeat(3)
+    console.log(t)*/
+     /* var x="sandee das deeak das sharma"
+      var t=x.split(' ')
+    console.log(t)
+*/
+  /*  var x="Sandeep Sappal Kumar"
+    var t=x.indexOf(' ')
+    var p=x.lastIndexOf(' ')
+    var q=x.slice(t+1,p)
+    alert(q)
+  
+   var x="9301123085"
+    x=x.slice(6).padStart(10,'*')
+   // alert(x)
+    //var t=x.padStart(10,'*')
+    console.log(x)*/
+   }
+</script>
+<html>
+    <input type="button" value="click here" onclick="call()"/>
+</html>

@@ -1,0 +1,118 @@
+<script>
+     var p=''
+    function call()
+    {
+        var i=msg.selectedIndex
+        switch(i)
+        {
+            case 1:
+               var scr1=[[1,'Tiger.'],[2,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;War'],[3,'BdyaPatirapo']]
+               p=scr1
+               fillDD(scr1)
+               break
+
+            case 2:
+                var scr2=[[4,'Dilwale'],[5,'Maakrraan'],[6,'Tamil movie']]
+                p=scr2
+                fillDD(scr2)
+                break
+            case 3:
+                var scr3=[[7,'Salaar'],[8,'Gadar'],[9,'Goatlife']]
+                p=scr3
+                fillDD(scr3)
+                break
+               
+        }
+    }
+
+    function fillDD(arr)
+    {
+         msg1.src=`${arr[0][0]}.jpg`
+         msg2.src=`${arr[1][0]}.jpg`
+         msg3.src=`${arr[2][0]}.jpg`
+         msg4.innerHTML=`${arr[0][1]}`
+         msg5.innerHTML=`${arr[1][1]}`
+         msg6.innerHTML=`${arr[2][1]}`
+         
+    }
+
+    function show()
+    {
+        var x=msg.value
+        var p13=''
+        var k=''
+        var p1=''
+        var p12=''
+        if(msg11.checked)
+        {
+            k=msg11.value
+             p1=p[0][0]
+             p12=p[0][1]
+             p13=100
+        }
+        else if(msg12.checked)
+        {
+            k=msg12.value
+             p1=p[1][0]
+             p12=p[1][1]
+             p13=150
+        }
+        else if(msg13.checked)
+        {
+            k=msg13.value
+             p1=p[2][0]
+             p12=p[2][1]
+             p13=200
+        }
+        var z=p13*msg8.value
+        var month=['jan','feb','mar','apr','may','jun','july','aug','sept','oct','nov','dec']
+        var day=['sun','mon','tues','wed','thur','fri','sat']
+
+        var d=new Date(msg7.value)
+        var q=d.getDay()
+        
+        var t=''
+        var y=''
+        if(q==0||q==6)
+        {
+            t=`<font color='red'>${day[q]}</font>`
+            y='Nothing to serve'
+        }
+        else
+        {
+            t=`<font color='green'>${day[q]}</font>`
+            y='popcorn'
+        }
+
+       var htm=`<table border=1 cellspacing=1 width='40%'>`
+        htm+=`<tr><th><h3><b>PVR<hr width="50" color="red"></b><br>${x}</h3></th></tr>`
+        htm+=`<tr><th><img src='${p1}.jpg' width='100' height='100'/><br>${p12}</th></tr>`
+        htm+=`<tr><td>Booking Day: ${t}<br>Booking Date: ${d.getDate()}-${month[d.getMonth()]}-${d.getFullYear()}</td></tr>`
+        htm+=`<tr><th>Price per ticket: &#8377;${p13}/-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>No. of tickets: ${msg8.value}</span><br>Total Price: &#8377;${z}/-</th></tr>`
+        htm+=`<tr><th><img src='${y}.png' width='100' height='100'/>${y}</th></tr>`
+
+        result.innerHTML=htm
+    }
+
+</script>
+<html>
+    <center>
+  <h3><b>PVR<hr width="50" color="red"></b></h3>
+  <select id="msg" onchange="call()">
+     <option>-Select Screen-</option>
+     <option>Screen 1</option>
+     <option>Screen 2</option>
+     <option>Screen 3</option>
+  </select><br><br>
+
+  <span><img id="msg1" width="100" height="100"></span><span><img id="msg2" width="100" height="100"></span><span><img id="msg3" width="100" height="100"></span><br>
+  <span id="msg4">Movie 1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="msg5">Movie 2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="msg6">Movie 3</span><br><br>
+  <input type="radio" id="msg11" name="film" value="9am-12pm"/>9am-12pm&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="msg12" name="film" value="12pm-3pm"/>12pm-3pm&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="msg13" name="film" value="3pm-6pm"/>3pm-6pm<br><br>
+  <input type="date" id="msg7"/><br><br>
+  <input type="text" id="msg8" placeholder="Tickets"/><br><br>
+  <input type="button" id="msg9" value="Submit" onclick="show()"/><br><br>
+  <div id="result"></div>
+   </center>
+</html>

@@ -1,0 +1,38 @@
+<script>
+    /* function call()
+     {
+       var months=['jan','feb','mar','apr','may','jun','july','agu','sept','oct','nov','dec']
+       var days=['sun','mon','tue','wed','thu','fri','sat']
+       var d=new Date()
+       var cd=`${days[d.getDay()]} ${d.getDate()}-${months[d.getMonth()]}-${d.getFullYear()}  
+               ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}:${d.getMilliseconds()}`
+        
+        result.innerHTML=cd 
+     }*/
+     var i=100
+     function call()
+     {
+        var file=`${i}.jpeg`
+        cat.src=file
+        i++
+        if(i==105)
+        {i=100}
+     }
+
+     var k
+     function start()
+     {
+        k=setInterval(call,200)
+     }
+     function stop()
+     {
+        clearInterval(k)
+     }
+</script>
+<html>
+    <input type="button" value="Start" onclick="start()"/>
+    <input type="button" value="Stop" onclick="stop()"/>
+    <center>
+    <img id="cat"/>
+    </center>
+</html>

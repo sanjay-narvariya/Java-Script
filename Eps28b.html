@@ -1,0 +1,33 @@
+<script>
+    var i=100
+    function call()
+    {
+       var file=`${i}.jpeg`
+       result.src=file
+       i++
+       if(i==105)
+       {
+        i=100
+       }
+
+        result.innerHTML=cd
+    }    
+
+    var k
+    function start()
+    {
+        k=setInterval(call,500)
+    }
+
+    function stop()
+    {
+        clearInterval(k)
+    }
+</script>
+<html>
+    <input type="button" value="Start" onclick="start()"/>&nbsp;&nbsp;
+    <input type="button" value="Stop" onclick="stop()"/>
+    <center>
+     <img id="result">
+    </center>
+</html>
