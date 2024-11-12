@@ -1,0 +1,26 @@
+<script>
+function call()
+{
+    var t=0
+    if(p1.checked)
+    {
+        t=t+150
+    }
+    if(p2.checked)
+    {
+        t=t+200
+    }
+    if(p3.checked)
+    {
+        t=t+250
+    }
+    result.innerHTML=t
+}
+ 
+</script>
+<html>
+    <input onchange="call()" type="checkbox" id="p1" value="sony tv"/>sony tv<br><br>
+    <input onchange="call()" type="checkbox" id="p2" value="sony mobile"/>sony mobile<br><br>
+    <input onchange="call()" type="checkbox" id="p3" value="sony radio"/>sony radio<br><br>
+    <div id="result"></div>
+</html>

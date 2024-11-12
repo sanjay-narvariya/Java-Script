@@ -1,0 +1,28 @@
+<script>
+     function call()
+     {
+        var a=parseFloat(txt1.value)
+        var b=parseFloat(txt2.value)
+        
+        var amt=a*b
+        msg1.innerHTML=`Amount: ${amt}`
+
+        var x=parseFloat(txt3.value)
+        var namt=(amt-x)
+       
+       msg2.innerHTML=x
+        msg3.innerHTML=namt
+
+     }
+</script>
+<html>
+    <input type="text" id="txt1" placeholder="Rate of product"><br><br>
+    <input type="text" id="txt2" placeholder="Quantity of product"><br><br>
+    <input type="button" value="Get Amount" onclick="call()"/><br><br>
+    <div id="msg1">Show Amount....</div><br><br>
+    
+    <b>Discount:</b><input type="text" id="txt3" placeholder="Discount on product"/><br><br>
+    <input type="button" value="Get amount after discount" onclick="call()"/><br><br>
+    <b>Discount Amount:</b><span id="msg2">Show Discount....</span><br><br>
+    <b>Net Amount:</b><span id="msg3">Show Net Amount....</span>
+</html>

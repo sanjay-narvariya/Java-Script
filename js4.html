@@ -1,0 +1,21 @@
+<script>
+    function calc()
+    {
+        var first=parseInt(txt1.value)
+        var second=parseInt(txt2.value)
+        var third=parseInt(txt3.value)
+
+        var SI=(first*second*third)/100
+        msg.innerHTML="<font color='red' size='5'> Simple Interest: "+SI+"</font>"
+        
+    }
+
+</script>
+<html>
+    <input type="text" id="txt1" placeholder="Amount"/><br><br>
+    <input type="text" id="txt2" placeholder="Time"/><br><br>
+    <input type="text" id="txt3" placeholder="Rate"/><br><br>
+    
+    <input type="button" id="btn" value="Simple Interest" onclick="calc()"/><br><br>
+    <div id="msg">See Here....</div>
+</html>

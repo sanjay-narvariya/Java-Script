@@ -1,0 +1,34 @@
+<script>
+    function getAmount()
+    { var r=rate.value
+        var q=qty.value
+        var a=r*q
+        return a
+    }
+    function showAmount()
+    { 
+        amt.innerHTML=getAmount()
+
+    }
+    function showNetAmount()
+    {   var a=getAmount()
+        var d=a*dis.value/100
+        var na=a-d
+        dd.value=d
+       // damt.innerHTML=d
+        namt.innerHTML=na
+
+    }
+    
+</script>
+<html>
+    <input type="text" id="rate" placeholder="Enter rate"/><br><br>
+    <input type="text" id="qty" placeholder="Enter quantity"/><br><br>
+    <b>Amount:</b><span id="amt"></span><br><br>
+    <input type="button" value="get amount" onclick="showAmount()"/><br><br>
+
+    <input type="text" id="dis" placeholder="Enter discount"/><br><br>
+    <input type="button" value="net amount" onclick="showNetAmount()"/><br><br>
+    <b><i>Discount Amount:</i></b><span id="damt"></span><input type="text" id="dd"/><br><br>
+    <b>Net Amount:</b><span id="namt"></span><br><br>
+</html>

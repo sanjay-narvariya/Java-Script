@@ -1,0 +1,11 @@
+<script src="json.js"></script>
+<html>
+   <body onload="show()">
+    <center>
+     <input onkeyup="search()"  type="text" placeholder="search by city..." id="city" /><br><br>
+     <input onchange="searchId()" type="radio" value="AC" name="city" id="ac"/>AC 
+     <input onchange="searchId()" type="radio" value="NONAC" name="city" id="nonac"/>NONAC<br><br>
+     <div id="result"> </div>
+    </center>
+    </body>
+</html>

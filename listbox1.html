@@ -1,0 +1,69 @@
+<script>
+    function move1()
+    {
+        fillDD(list1,list2)
+    }
+    function move2()
+    {
+        fillDD(list2,list1)
+    }
+    function fillDD(arr1,dd1)
+    {   
+        var opt=document.createElement('option')
+        opt.text=arr1.value
+        dd1.add(opt)
+        arr1.remove(arr1.selectedIndex)
+    }
+
+
+    function move3()
+    {
+        fillPP(list1,list2)
+    }
+    function move4()
+    {
+        fillPP(list2,list1)
+    }
+
+    function fillPP(arr,dd)
+    {
+        for(i=0;i<arr.length;i++)
+        {
+        var opt1=document.createElement('option')
+        opt1.text=arr.options[i].value
+        dd.add(opt1)
+        }
+
+        removeOptions(arr)
+    }
+
+  function  removeOptions(arr)
+     {
+        for(j=arr.options.length-1;j>=0;j--)
+        {
+        arr.remove(j)
+        }
+    }
+</script>
+
+<html><center>
+    <h1><b>List 1</b></h1>
+<select size="5" id="list1" multiple>
+    <option>Pepsi</option>
+    <option>Fenta</option>
+    <option>Cocacola</option>
+    <option>Frooti</option>
+    <option>Sprite</option>
+</select>
+<span>
+    <h1><b>List 2</b></h1>
+<select size="5" id="list2" multiple>
+    <option>select</option>
+</select>
+</span><br><br>
+<input type="button" value=">"  onclick="move1()"/>
+<input type="button" value="<"  onclick="move2()"/>
+<input type="button" value=">>" onclick="move3()"/>
+<input type="button" value="<<" onclick="move4()"/>
+</center>
+</html>

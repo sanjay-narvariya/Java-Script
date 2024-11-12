@@ -1,0 +1,24 @@
+<script>//closer Example
+ function call()
+ {
+    var message="Hi"
+    console.log("Hello peter:",message)
+     function hey(){
+      return message;
+     }
+
+    return hey;
+};
+
+var local=call()
+var p=local()
+console.log(p)
+
+console.log(p)
+
+</script>
+<html>
+    <body>
+        <input type="button" value="click here" onclick="call()"/>
+    </body>
+</html>

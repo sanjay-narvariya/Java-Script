@@ -1,0 +1,142 @@
+<script>
+   function call()
+   {
+        var a=parseInt(txt1b.value)
+        var b=parseInt(txt2b.value)
+        var c=parseInt(txt3b.value)
+        var rs=''
+        if((a>10)&&(b>10)&&(c>10))
+        { 
+            rs=450
+        }
+        else if((a>10)&&(b>10)||(b>10)&&(c>10)||(a>10)&&(c>10))
+        {
+            rs=300
+        }
+        else if((a>10)||(b>10)||(c>10))
+        {
+            rs=150
+        }
+     var htm=`<table border=1 cellspacing=0 width=50% bgcolor='#b33939'>`
+        htm+=`<tr align='center' valign='middle'><th><font size='5'>Happy Journey</font><img src='railwaylogo.png' width='60' height='90'/><font size='5'>UCC 79706886</font></th></tr>`
+        htm+=`</table>`
+        htm+=`<table border=1 cellspacing=0 width=50%>`
+        htm+=`<tr align='center' valign='middle'><td colspan='2'><b>From:</b>${from.value} &nbsp;&nbsp;<b>To:</b>${to.value}</td><td width='30%'><b>Train:</b>${train.value}</td></tr>`
+        htm+=`<tr align='center' valign='middle'><td colspan='3'><b><font size='4' color='#6D214F'>Passengers Details:</font></b></td></tr>`
+        htm+=`</table>`
+        htm+=`<table border=1 cellspacing=0 width=50%>`
+        htm+=`<tr align='center' valign='middle'><th><b>Name</b></th><th width='10%'><b>Age</b></th><th width='10%'><b>Sex</b></th><th width='20%'><b>Birth</b></th><th width='25%'><b></b></th></tr>`
+        htm+=`<tr align='center' valign='middle'><td>${txt1a.value}</td><td width='10%'>${txt1b.value}</td><td width='10%'>${fm1.value}</td><td width='20%'>${bt1.value}</td><td width='25%' rowspan='3' align='left' valign='middle'><b>Distance:${txt.value} km</b></td></tr>`
+        htm+=`<tr align='center' valign='middle'><td>${txt2a.value}</td><td width='10%'>${txt2b.value}</td><td width='10%'>${fm2.value}</td><td width='20%'>${bt2.value}</td></tr>`
+        htm+=`<tr align='center' valign='middle'><td>${txt3a.value}</td><td width='10%'>${txt3b.value}</td><td width='10%'>${fm3.value}</td><td width='20%'>${bt3.value}</td></tr>`
+         htm+=`<tr align='center'><td colspan='4'></td><td width='20%'><b>Rs.</b>&nbsp;${rs} &#8377;/-</td></tr>`
+         htm+=`</table>`
+
+        result.innerHTML=htm
+   }
+</script>
+<html>
+    <body>
+     <center>
+       <hr color="red" width="30%" align="middle">
+       <h2><font size="6px" color="#34495e" face="monotype corsiva">Railway Reservation System</font></h2>
+       <hr color="red" width="30%" align="middle"><br>
+       <div><b>City From:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+       <select id="from">
+           <option >Gwalior</option>
+           <option>Datia</option>
+           <option selected>Morena</option>
+       </select>
+       </div><br>
+       <div><b>City To:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="to">
+            <option >Dehli</option>
+            <option>Jaipur</option>
+            <option selected>Agra</option>
+        </select>
+        </div><br>
+        <div><b>Train Name:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="train">
+                <option selected>Taj Express</option>
+                <option>Raj Dhaani</option>
+                <option>Jansatabdi</option>
+            </select>
+        </div><br>
+        <div><b>Distance:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="txt" placeholder="Distance..."/>
+        </div><br><br>
+        
+        <table cellspacing="0" border="1" width="50%">
+            <caption><b>Passenger Information:</b></caption>
+            <tr><th>S.No.</th><th>Name</th><th>Age</th><th>Sex</th><th>Birth Type</th></tr>
+            <tr>
+                <td><b>1.</b></td>
+                <td><input type="text" id="txt1a" /></td>
+                <td><input type="text" id="txt1b"/></td>
+                <td>
+                    <select id="fm1">
+                        <option selected>None</option>
+                        <option >Male</option>
+                        <option>Female</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="bt1">
+                        <option selected>None</option>
+                        <option>Upper</option>
+                        <option>Middle</option>
+                        <option>Lower</option>
+                    </select>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><b>2.</b></td>
+                <td><input type="text" id="txt2a" /></td>
+                <td><input type="text" id="txt2b"/></td>
+                <td>
+                    <select id="fm2">
+                        <option selected>None</option>
+                        <option >Male</option>
+                        <option>Female</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="bt2">
+                        <option selected>None</option>
+                        <option >Upper</option>
+                        <option>Middle</option>
+                        <option>Lower</option>
+                    </select>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><b>3.</b></td>
+                <td><input type="text" id="txt3a" /></td>
+                <td><input type="text" id="txt3b"/></td>
+                <td>
+                    <select id="fm3">
+                        <option selected>None</option>
+                        <option >Male</option>
+                        <option>Female</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="bt3">
+                        <option selected>None</option>
+                        <option>Upper</option>
+                        <option>Middle</option>
+                        <option>Lower</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td align="center" valign="middle" colspan="5"><br><input type="button" value="Submit" onclick="call()"><br></td></tr>    
+        </table><br><br>
+
+        <div id="result">See Here</div>
+
+    </body>
+</html>

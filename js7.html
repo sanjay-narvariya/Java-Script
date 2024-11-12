@@ -1,0 +1,60 @@
+<script>
+    function showMark()
+    {
+        var a=parseFloat(rn.value)
+        var b=nm.value
+        var c=parseFloat(ph.value)
+        var d=parseFloat(ch.value)
+        var e=parseFloat(ma.value)
+        rln.innerHTML=a
+        nam.innerHTML=b
+        phy.innerHTML=c
+        chm.innerHTML=d
+        mat.innerHTML=e
+        var t=c+d+e
+        to.innerHTML=t
+        var p=t*100/300
+        per.innerHTML=p
+        if(p>=60 && p<=100)
+        {
+            div.innerHTML="A"
+        }
+        else if(p>=48 && p<=59)
+        {
+            div.innerHTML="B"
+        }
+        else if(p>=35 && p<=47)
+        {
+            div.innerHTML="C"
+        }
+        else if(p>=0 && p<=34)
+        {
+            div.innerHTML="D"
+        }
+    }
+    
+</script>
+<html>
+    <div><i><b><font size="4" color="black">Enter Student Marks</font></b></i></div>
+
+    <input type="text" id="rn" placeholder="Enter roll number"/><br><br>
+    <input type="text" id="nm" placeholder="Enter name"/><br><br>
+    <input type="text" id="ph" placeholder="Enter physics marks"/><br><br>
+    <input type="text" id="ch" placeholder="Enter chemistry marks"/><br><br>
+    <input type="text" id="ma" placeholder="Enter math marks"/><br><br>
+    
+   
+    <input type="button" value="Get result" onclick="showMark()"/><br><br>
+
+    <i><b><font size="5" color="red">Student Marksheet</font></b></i></div><br>
+
+    <b>Roll no.:</b><span id="rln"></span><br><br>
+    <b>Name:</b><span id="nam"></span><br><br>
+    <b>Physics:</b><span id="phy"></span><br><br>
+    <b>Chemistry:</b><span id="chm"></span><br><br>
+    <b>Math:</b><span id="mat"></span><br><br>
+    <b>Total:</b><span id="to"></span><br><br>
+    
+    <b>Percentage:</b><span id="per"></span><br><br>
+    <b>Division:</b><span id="div"></span><br><br>
+</html>

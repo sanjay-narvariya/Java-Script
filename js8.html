@@ -1,0 +1,34 @@
+<script>
+    function call()
+    { carname.innerHTML=cars.value
+        switch(cars.value)
+        {
+            case "Maruti jimmy":
+                price.innerHTML="&#8377 1500000/-"
+                break
+            case "Maruti ciaz":
+                price.innerHTML="&#8377 2000000/-"
+                break
+            case "Maruti alto":
+                price.innerHTML="&#8377 500000/-"
+                break
+            case "Maruti swift":
+                price.innerHTML="&#8377 1000000/-"
+                break
+        }
+
+    }
+
+</script>
+<html>
+    <select id="cars">
+        <option>-Select Car-</option>
+        <option>Maruti jimmy</option>
+        <option>Maruti ciaz</option>
+        <option>Maruti alto</option>
+        <option>Maruti swift</option>
+    </select><br><br>
+    <input type="button" value="click here" onclick="call()"/><br><br>
+     <div id="carname"></div><br><br>
+     <div id="price"></div><br><br>
+</html>

@@ -1,0 +1,20 @@
+<script>
+     function call()
+     {
+        var a=parseFloat(txt1.value)
+        var b=parseFloat(txt2.value)
+        var c=parseFloat(txt3.value)
+        var si=a*b*c/100
+        msg.innerHTML="Simple Interest "+si
+        //msg.innerHTML=`Simple Interest ${si}`
+
+     }
+</script>
+<html>
+    <input type="text" id="txt1" placeholder="Amount"/><br><br>
+    <input type="text" id="txt2" placeholder="Rate"/><br><br>
+    <input type="text" id="txt3" placeholder="Time"/><br><br>
+    <input type="button" value="Simple Inerest" onclick="call()"/><br><br>
+    <div id="msg">See here....</div>
+
+</html>

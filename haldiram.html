@@ -1,0 +1,24 @@
+<script src="haldiram.js"></script>
+<html>
+    <center>
+    <select id="selct" onchange="call()">
+          <option>Selected-food</option>
+          <option>Indian food</option>
+          <option>Chinese food</option>
+          <option>Italian food</option>
+    </select><br><br>
+    <select id="choice">
+        <option>Select choice</option>
+    </select><br><br>
+    <h1><b>Quantity Of Plate</b></h1>
+    <input type="text" id="qty" placeholder="input quantity"/><br><br>
+    
+    <h3><b>Enter Discount: </b></h3>
+    <input type="radio" id="p1" name="dis1" value="10" />10%
+    <input type="radio" id="p2" name="dis1" value="20" />20%
+    <input type="radio" id="p3" name="dis1" value="50" />50%<br><br>
+    <input type="button" value="Submit" onclick="fillData()"/><br><br>
+    <div id="result"></div>
+
+</center>
+</html>

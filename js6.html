@@ -1,0 +1,31 @@
+<script>
+    function showNetSalary()
+    {
+        var a=parseInt(slry.value)
+        
+        b=a*55/100
+        dd.innerHTML=b
+        c=a*20/100
+        hh.innerHTML=c
+        d=a*12/100
+        pp.innerHTML=d
+
+        var s=a+b+c-d
+        amt.innerHTML=s
+        var t=s*12
+        nn.innerHTML=t
+    }
+    
+</script>
+<html>
+    <input type="text" id="slry" placeholder="Enter Employee Salary"/><br><br>
+    
+    
+   
+    <input type="button" value="net salary" onclick="showNetSalary()"/><br><br>
+    <b><i>DA:</i></b><span id="dd"></span>....(55%)<br><br>
+    <b>HRA:</b><span id="hh"></span>....(20%)<br><br>
+    <b>PF:</b><span id="pp"></span>....(12%)<br><br><br>
+    <b>Salary per Month:</b><span id="amt"></span><br><br>
+    <b>Net Annual Salary :</b><span id="nn"></span><br><br>
+</html>
